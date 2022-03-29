@@ -1,11 +1,11 @@
 package Modelo
 
-open class Persona {
-    protected var nombre : String =""
-    protected var sexo : Char = '\u0000'
-    protected var edad : Int = 0
-    protected var peso : Int = 0
-    protected var altura : Float = 0F
+ class Persona {
+     var nombre : String =""
+     var sexo : Char = '\u0000'
+     var edad : Int = 0
+     var peso : Int = 0
+     var altura : Float = 0F
 
     constructor(nombre : String,sexo : Char, edad : Int, peso : Int, altura : Float ){
         this.nombre = nombre
@@ -23,4 +23,8 @@ open class Persona {
 
     constructor()
 
-}
+     override fun toString(): String {
+         return "Persona(nombre='$nombre', sexo=$sexo, edad=$edad, peso=$peso, altura=$altura)"
+     }
+
+ }

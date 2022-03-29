@@ -1,14 +1,21 @@
 package View
 
 import Controller.PersonaController
+import Modelo.Persona
 
-class PersonaView(nombre: String, sexo: Char, edad: Int, peso: Int, altura: Float) :
-    PersonaController(nombre, sexo, edad, peso, altura) {
+class PersonaView {
+    var persona = Persona()
+    var personaController = PersonaController(persona)
 
-        fun LlamaMetodos(){
-            print(calcularIMC())
-            print(comprobarSexo())
-            print(esMayorDeEdad())
+
+        fun inicializa(){
+            persona.altura = 180F
+            persona.peso = 80
+            personaController.persona = persona
+
+            println(personaController.calcularIMC())
+            println(personaController.esMayorDeEdad())
+
 
         }
 }
